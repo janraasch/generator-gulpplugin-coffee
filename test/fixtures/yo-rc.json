@@ -1,0 +1,7 @@
+{
+  "generator-gulpplugin-coffee": {
+    "githubUser": "githubUser",
+    "pluginName": "awesome",
+    "appname": "gulp-awesome"
+  }
+}

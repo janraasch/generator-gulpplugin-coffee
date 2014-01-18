@@ -1,0 +1,24 @@
+Description:
+    Creates a gulp plugin written in CoffeeScript
+
+Example:
+    yo gulpplugin-coffee [--skip-github]
+
+    This will create:
+        .editorconfig
+        .gitattributes
+        .gitignore
+        .npmignore
+        .yo-rc.json
+
+        .travis.yml
+        readme.md
+        package.json
+        coffeelint.json
+
+        gulpfile.coffee
+
+        index.coffee
+        test/main.coffee
+
+        LICENSE

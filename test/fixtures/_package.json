@@ -1,0 +1,39 @@
+{
+  "name": "gulp-awesome",
+  "version": "0.0.0",
+  "description": "A plugin for gulp",
+  "keywords": [
+    "gulpplugin"
+  ],
+  "repository": "paully/gulp-awesome",
+  "author": {
+    "name": "Really Paul",
+    "email": "really@mail.me",
+    "url": "reallreally.me"
+  },
+  "files": ["index.js"],
+  "scripts": {
+    "prepublish": "gulp coffee --require coffee-script",
+    "test": "coffeelint gulpfile.coffee index.coffee test -f ./coffeelint.json && istanbul test _mocha --report lcovonly -- ./test/*.coffee --require coffee-script --reporter spec",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+  },
+  "dependencies": {
+    "gulp-util": "~2.2.5",
+    "through2": "~0.4.0"
+  },
+  "devDependencies": {
+    "coffee-script": "~1.6.3",
+    "coffeelint": "~1.0.2",
+    "mocha": "~1.17.0",
+    "istanbul": "~0.2.3",
+    "should": "~3.0.1",
+    "coveralls": "~2.6.1",
+    "gulp": "~3.4.1",
+    "gulp-coffee": "~1.2.2",
+    "gulp-clean": "~0.2.2"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "license": "MIT"
+}

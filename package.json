@@ -1,0 +1,58 @@
+{
+  "name": "generator-gulpplugin-coffee",
+  "version": "0.0.0",
+  "description": "A Yeoman generator for CoffeeScript gulp plugins",
+  "keywords": [
+    "yeoman-generator",
+    "gulp",
+    "gulpfriendly",
+    "coffee",
+    "coffeescript",
+    "coffee-script"
+  ],
+  "author": {
+    "name": "Jan Raasch",
+    "email": "jan@janraasch.com",
+    "url": "http://janraasch.com"
+  },
+  "files": [
+    "app"
+  ],
+  "main": "app/index.js",
+  "repository": "janraasch/generator-gulpplugin-coffee",
+  "scripts": {
+    "prepublish": "gulp coffee --failOnLintError --require coffee-script",
+    "test": "istanbul test _mocha --report lcovonly -- test/*.coffee --require coffee-script --reporter spec --timeout 100000",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+  },
+  "dependencies": {
+    "yeoman-generator": "~0.16.0",
+    "mit": "~0.1.0",
+    "coffee-script": "~1.6.3",
+    "gulp-util": "~2.2.5",
+    "github": "~0.1.12"
+  },
+  "devDependencies": {
+    "coffee-script": "~1.6.3",
+    "mocha": "~1.17.0",
+    "gulp": "~3.4.1",
+    "gulp-util": "~2.2.5",
+    "gulp-coffee": "~1.2.2",
+    "gulp-clean": "~0.2.2",
+    "coffeelint": "~1.0.2",
+    "through2": "~0.4.0",
+    "coveralls": "~2.6.1",
+    "istanbul": "~0.2.3",
+    "gulp-coffeelint": "~0.1.2",
+    "event-stream": "~3.1.0",
+    "should": "~3.0.1"
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0"
+  },
+  "engines": {
+    "node": ">=0.10.0",
+    "npm": ">=1.2.10"
+  },
+  "license": "MIT"
+}
