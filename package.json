@@ -45,7 +45,8 @@
     "istanbul": "~0.2.3",
     "gulp-coffeelint": "~0.1.2",
     "event-stream": "~3.1.0",
-    "should": "~3.0.1"
+    "should": "~3.0.1",
+    "conventional-changelog": "0.0.4"
   },
   "peerDependencies": {
     "yo": ">=1.0.0"

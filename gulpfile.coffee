@@ -1,4 +1,5 @@
 {spawn} = require 'child_process'
+fs = require 'fs'
 gulp = require 'gulp'
 {log,colors} = require 'gulp-util'
 clean = require 'gulp-clean'
@@ -44,6 +45,16 @@ gulp.task 'clean', ->
 # run tests
 gulp.task 'test', ['coffee'], ->
     spawn 'npm', ['test'], stdio: 'inherit'
+
+# create changelog
+gulp.task 'changelog', ->
+    changelog = require 'conventional-changelog'
+    changelog({
+        repository: 'https://github.com/janraasch/generator-gulpplugin-coffee'
+        version: require('./package.json').version
+    }, (err, log) ->
+        fs.writeFileSync 'CHANGELOG.md', log
+    )
 
 # workflow
 gulp.task 'default', ->
