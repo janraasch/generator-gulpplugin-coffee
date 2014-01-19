@@ -5,7 +5,7 @@
 
 ## Getting started
 * Install yeoman `npm install -g yo`.
-* Install generator `npm install -g generator-plugin-coffee`.
+* Install generator `npm install -g generator-gulpplugin-coffee`.
 * Scaffold out the plugin `yo gulpplugin-coffee`.
 
 ## What do you get?
