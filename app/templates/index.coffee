@@ -17,13 +17,13 @@ awesomePlugin = (opt = msg: 'More Coffee!') ->
 
         # pass along empty files
         if file.isNull()
-            this.push file
+            @push file
             return done()
 
         # as long as we do not support streams
         # we have to let 'em now
         if file.isStream()
-            this.emit 'error', createPluginError(
+            @emit 'error', createPluginError(
                 'stream content is not supported'
             )
             return done()
@@ -34,7 +34,7 @@ awesomePlugin = (opt = msg: 'More Coffee!') ->
 
         # let's pass the result along
         file.contents = new Buffer output
-        this.push file
+        @push file
         done()
 
 module.exports = awesomePlugin
