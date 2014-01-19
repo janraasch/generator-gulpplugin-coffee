@@ -1,7 +1,7 @@
 # generator-gulpplugin-coffee [![NPM version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependency Status][depstat-image]][depstat-url] [![devDependency Status][devdepstat-image]][devdepstat-url]
 
-> A [Yeoman](http://yeoman.io) generator for CoffeeScript [gulp](http://gulpjs.com/) plugins.
+> A [Yeoman](http://yeoman.io) generator for CoffeeScript [gulp][gulp] plugins.
 
 ## Getting started
 * Install yeoman `npm install -g yo`.
@@ -13,10 +13,17 @@ A working gulp plugin following the guidelines and best practices described in t
 
 ![npm test](screenshot.png)
 
-## License
+## Contributing
+In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [gulp][gulp] and [npm-test](https://npmjs.org/doc/test.html).
 
+## Credits
+* [Generator for CoffeeScript Yeoman generators](https://npmjs.org/package/generator-generator_grunt_coffee)
+* [Generator for JavaScript gulp plugins](https://npmjs.org/package/generator-gulp-plugin)
+
+## License
 [MIT License](http://en.wikipedia.org/wiki/MIT_License) © [Jan Raasch](http://janraasch.com)
 
+[gulp]: http://gulpjs.com/
 [gulp-documentation]: https://github.com/gulpjs/gulp/blob/master/docs/README.md
 
 [npm-url]: https://npmjs.org/package/generator-gulpplugin-coffee
