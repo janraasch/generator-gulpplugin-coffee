@@ -3,7 +3,7 @@ through = require 'through2'
 PluginError = (require 'gulp-util').PluginError
 
 createPluginError = (message) ->
-    new PluginError 'gulp-coffeelint', message
+    new PluginError '<%= config.get("appname") %>', message
 
 awesomePlugin = (opt = msg: 'More Coffee!') ->
     # check validity of input

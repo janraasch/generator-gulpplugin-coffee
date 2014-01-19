@@ -4,7 +4,7 @@ gutil = require 'gulp-util'
 path = require 'path'
 
 # const
-PLUGIN_NAME = 'gulp-coffeelint'
+PLUGIN_NAME = '<%= config.get("appname") %>'
 ERRS =
     MSG:
         'msg param needs to be a string, dummy'
