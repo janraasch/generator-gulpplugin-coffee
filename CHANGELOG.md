@@ -4,7 +4,7 @@
 
 #### Bug Fixes
 
-* **package.json:** apparently `v3.4.1` of `gulp is gone again ([eedfbd4cf2309e37508f684d36be0d9d8d97300c](https://github.com/janraasch/generator-gulpplugin-coffee/commit/eedfbd4cf2309e37508f684d36be0d9d8d97300c))
+* **package.json:** apparently `v3.4.1` of `gulp` is gone again ([eedfbd4cf2309e37508f684d36be0d9d8d97300c](https://github.com/janraasch/generator-gulpplugin-coffee/commit/eedfbd4cf2309e37508f684d36be0d9d8d97300c))
 
 
 <a name="0.0.2"></a>
