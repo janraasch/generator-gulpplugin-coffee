@@ -1,3 +1,12 @@
+<a name="0.0.3"></a>
+### 0.0.3 (2014-01-20)
+
+
+#### Bug Fixes
+
+* **package.json:** apparently `v3.4.1` of `gulp is gone again ([eedfbd4cf2309e37508f684d36be0d9d8d97300c](https://github.com/janraasch/generator-gulpplugin-coffee/commit/eedfbd4cf2309e37508f684d36be0d9d8d97300c))
+
+
 <a name="0.0.2"></a>
 ### 0.0.2 (2014-01-19)
 
