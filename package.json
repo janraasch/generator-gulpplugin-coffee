@@ -35,7 +35,7 @@
   "devDependencies": {
     "coffee-script": "~1.6.3",
     "mocha": "~1.17.0",
-    "gulp": "~3.4.1",
+    "gulp": "~3.4.0",
     "gulp-util": "~2.2.5",
     "gulp-coffee": "~1.2.2",
     "gulp-clean": "~0.2.2",
