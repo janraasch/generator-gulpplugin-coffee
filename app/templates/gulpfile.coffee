@@ -21,9 +21,9 @@ gulp.task 'test', ['coffee'], ->
 
 # run `<%= config.get('appname') %>` for testing purposes
 gulp.task '<%= _.slugify(config.get("appname")) %>', ->
-    <%= config.get("pluginName") %> = require './index.coffee'
+    <%= _.camelize(config.get("pluginName")) %> = require './index.coffee'
     gulp.src('./{,test/,test/fixtures/}*.coffee')
-        .pipe(<%= config.get('pluginName') %>())
+        .pipe(<%= _.camelize(config.get("pluginName")) %>())
 
 # start workflow
 gulp.task 'default', ->
