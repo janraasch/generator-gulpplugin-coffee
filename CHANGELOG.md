@@ -1,3 +1,12 @@
+<a name="0.0.4"></a>
+### 0.0.4 (2014-01-20)
+
+
+#### Bug Fixes
+
+* **templates:** use camelized plugin name ([842756b12e188e477543dae7f031b24d338dd322](https://github.com/janraasch/generator-gulpplugin-coffee/commit/842756b12e188e477543dae7f031b24d338dd322))
+
+
 <a name="0.0.3"></a>
 ### 0.0.3 (2014-01-20)
 

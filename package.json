@@ -1,6 +1,6 @@
 {
   "name": "generator-gulpplugin-coffee",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A Yeoman generator for CoffeeScript gulp plugins",
   "keywords": [
     "yeoman-generator",
