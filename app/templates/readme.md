@@ -1,5 +1,6 @@
-# <%= config.get('appname') %> ![Build Status][travis-image]][travis-url] [![Coverage Status](coveralls-image)](coveralls-url) [![NPM version][npm-image]][npm-url]
-[[![Dependency Status][depstat-image]][depstat-url]
+# <%= config.get('appname') %> [![NPM version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependency Status][depstat-image]][depstat-url] [![devDependency Status][devdepstat-image]][devdepstat-url]
+
 
 > <%= _.capitalize(config.get('pluginName')) %> plugin for [gulp](http://gulpjs.com/) 3.
 
@@ -48,3 +49,6 @@ The message you wish to attach to file.
 
 [depstat-url]: https://david-dm.org/<%= config.get('githubUser') %>/<%= config.get('appname') %>
 [depstat-image]: https://david-dm.org/<%= config.get('githubUser') %>/<%= config.get('appname') %>.png
+
+[devdepstat-url]: https://david-dm.org/<%= config.get('githubUser') %>/<%= config.get('appname') %>#info=devDependencies
+[devdepstat-image]: https://david-dm.org/<%= config.get('githubUser') %>/<%= config.get('appname') %>/dev-status.png

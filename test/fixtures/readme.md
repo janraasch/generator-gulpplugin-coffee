@@ -1,5 +1,6 @@
-# gulp-awesome ![Build Status][travis-image]][travis-url] [![Coverage Status](coveralls-image)](coveralls-url) [![NPM version][npm-image]][npm-url]
-[[![Dependency Status][depstat-image]][depstat-url]
+# gulp-awesome [![NPM version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependency Status][depstat-image]][depstat-url] [![devDependency Status][devdepstat-image]][devdepstat-url]
+
 
 > Awesome plugin for [gulp](http://gulpjs.com/) 3.
 
@@ -48,3 +49,6 @@ The message you wish to attach to file.
 
 [depstat-url]: https://david-dm.org/paully/gulp-awesome
 [depstat-image]: https://david-dm.org/paully/gulp-awesome.png
+
+[devdepstat-url]: https://david-dm.org/paully/gulp-awesome#info=devDependencies
+[devdepstat-image]: https://david-dm.org/paully/gulp-awesome/dev-status.png
