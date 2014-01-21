@@ -62,13 +62,16 @@ describe 'generator gulpplugin-coffee', ->
             pluginName: 'awesome'
 
         app.run {}, ->
-            expected = JSON.parse(
-                fs.readFileSync('../fixtures/yo-rc.json').toString()
-            )
-            expected.should.eql JSON.parse(
-                fs.readFileSync('.yo-rc.json').toString()
-            )
-            done()
+            # wait for `.yo-rc.json` to be written
+            setTimeout ->
+                expected = JSON.parse(
+                    fs.readFileSync('../fixtures/yo-rc.json').toString()
+                )
+                expected.should.eql JSON.parse(
+                    fs.readFileSync('.yo-rc.json').toString()
+                )
+                done()
+            , 100
 
     it 'scaffolds package.json according to input', (done) ->
         helpers.mockPrompt app,

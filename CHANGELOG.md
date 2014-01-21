@@ -1,3 +1,12 @@
+<a name="0.0.5"></a>
+### 0.0.5 (2014-01-21)
+
+
+#### Bug Fixes
+
+* **templates:** badges ([cecf2271204e05ede648d13fab69dea29cddf85b](https://github.com/janraasch/generator-gulpplugin-coffee/commit/cecf2271204e05ede648d13fab69dea29cddf85b))
+
+
 <a name="0.0.4"></a>
 ### 0.0.4 (2014-01-20)
 
@@ -34,3 +43,4 @@
 ### 0.0.1 (2014-01-18)
 
 Initial release.
+> Release early, release often.
