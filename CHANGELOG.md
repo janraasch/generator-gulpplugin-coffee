@@ -1,3 +1,12 @@
+<a name="0.1.0"></a>
+## 0.1.0 (2014-01-25)
+
+
+#### Features
+
+* **gulp:** update `gulp` to `v3.5.0` ([5ae06696](https://github.com/janraasch/generator-gulpplugin-coffee/commit/5ae066961bf9e8276a6e58dbcf3423fc6f863abf))
+
+
 <a name="0.0.5"></a>
 ### 0.0.5 (2014-01-21)
 
