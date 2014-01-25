@@ -1,7 +1,6 @@
 gulp = require 'gulp'
 coffee = require 'gulp-coffee'
 clean = require 'gulp-clean'
-{log,colors} = require 'gulp-util'
 {spawn} = require 'child_process'
 
 # compile `index.coffee`
