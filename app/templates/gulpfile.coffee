@@ -26,11 +26,7 @@ gulp.task '<%= _.slugify(config.get("appname")) %>', ->
         .pipe(<%= _.camelize(config.get("pluginName")) %>())
 
 # start workflow
-gulp.task 'default', ->
-    gulp.run 'coffee'
-
-    gulp.watch ['./{,test/,test/fixtures/}*.coffee'], (e) ->
-        log "File #{e.type} #{colors.magenta e.path}"
-        gulp.run 'test'
+gulp.task 'default', ['coffee'], ->
+    gulp.watch ['./{,test/,test/fixtures/}*.coffee'], ['test']
 
 # Generated on <%= (new Date).toISOString().split('T')[0] %> using <%= pkg.name %> <%= pkg.version %>

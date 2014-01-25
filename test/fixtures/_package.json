@@ -28,7 +28,7 @@
     "istanbul": "~0.2.3",
     "should": "~3.0.1",
     "coveralls": "~2.6.1",
-    "gulp": "~3.4.0",
+    "gulp": "~3.5.0",
     "gulp-coffee": "~1.2.2",
     "gulp-clean": "~0.2.2"
   },

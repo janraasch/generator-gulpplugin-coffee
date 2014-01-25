@@ -1,7 +1,7 @@
 {spawn} = require 'child_process'
 fs = require 'fs'
 gulp = require 'gulp'
-{log,colors} = require 'gulp-util'
+{log,colors,env} = require 'gulp-util'
 clean = require 'gulp-clean'
 coffee = require 'gulp-coffee'
 coffeelint = require 'gulp-coffeelint'
@@ -23,7 +23,7 @@ gulp.task 'coffee', ->
 
     both = concat compile, lint
 
-    if not gulp.env.failOnLintError
+    if not env.failOnLintError
         return both
 
     both.pipe(map (file, cb) ->
@@ -57,13 +57,9 @@ gulp.task 'changelog', ->
     )
 
 # workflow
-gulp.task 'default', ->
-    gulp.run 'coffee'
-
+gulp.task 'default', ['coffee'], ->
     gulp.watch [
         '{,app/}*.coffee',
         'app/{templates/,templates/test}*',
         'test/*.coffee'
-    ], (e) ->
-        log "File #{e.type} #{colors.magenta e.path}"
-        gulp.run 'test'
+    ], ['test']
