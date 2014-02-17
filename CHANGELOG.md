@@ -1,3 +1,12 @@
+<a name="0.1.1"></a>
+### 0.1.1 (2014-02-17)
+
+
+#### Features
+
+* **deps:** default to `^` (caret) instead of `~` (tilde) ([f7099a26](https://github.com/janraasch/generator-gulpplugin-coffee/commit/f7099a2606c6c62e5535231702285d276178b1c0))
+
+
 <a name="0.1.0"></a>
 ## 0.1.0 (2014-01-25)
 
