@@ -1,6 +1,6 @@
 'use strict'
 through = require 'through2'
-PluginError = (require 'gulp-util').PluginError
+{PluginError} = require 'gulp-util'
 
 createPluginError = (message) ->
     new PluginError '<%= config.get("appname") %>', message
@@ -30,7 +30,7 @@ awesomePlugin = (opt = msg: 'More Coffee!') ->
 
         # this is where the magic happens
         input = file.contents.toString()
-        output = input + '\n' + opt.msg
+        output = "#{input}\n#{opt.msg}"
 
         # let's pass the result along
         file.contents = new Buffer output
