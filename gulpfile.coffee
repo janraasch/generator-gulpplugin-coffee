@@ -10,37 +10,37 @@ coffeelint = require 'gulp-coffeelint'
 # compile and lint
 gulp.task 'coffee', ->
     compile = gulp
-        .src(['app/index.coffee'])
-        .pipe(coffeelint())
-        .pipe(coffeelint.reporter())
-        .pipe(coffee bare: true)
-        .pipe(gulp.dest 'app/')
+        .src ['app/index.coffee']
+        .pipe coffeelint()
+        .pipe coffeelint.reporter()
+        .pipe coffee bare: true
+        .pipe gulp.dest 'app/'
 
     lint = gulp
-        .src(['gulpfile.coffee', 'test/*.coffee'])
-        .pipe(coffeelint())
-        .pipe(coffeelint.reporter())
+        .src ['gulpfile.coffee', 'test/*.coffee']
+        .pipe coffeelint()
+        .pipe coffeelint.reporter()
 
     both = concat compile, lint
 
     if not env.failOnLintError
         return both
 
-    both.pipe(map (file, cb) ->
+    both.pipe map (file, cb) ->
         if file.coffeelint and not file.coffeelint.success
             throw new Error 'Coffeelint failed'
         else
             cb null, file
-    ).on('error', (e) ->
+    .on 'error', (e) ->
         log colors.red e
         process.exit 1
-    )
+
 
 # remove `app/index.js`, `coverage`
 # and `test/temp` dirs
 gulp.task 'clean', ->
-    gulp.src(['app/index.js', 'coverage', 'test/temp'], read: false)
-        .pipe(clean())
+    gulp.src ['app/index.js', 'coverage', 'test/temp'], read: false
+        .pipe clean()
 
 # run tests
 gulp.task 'test', ['coffee'], ->
