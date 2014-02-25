@@ -23,14 +23,9 @@ gulp.task 'coffee', ->
 
     both = concat compile, lint
 
-    if not env.failOnLintError
-        return both
+    return both if not env.failOnLintError
 
-    both.pipe map (file, cb) ->
-        if file.coffeelint and not file.coffeelint.success
-            throw new Error 'Coffeelint failed'
-        else
-            cb null, file
+    both.pipe coffeelint.reporter 'fail'
     .on 'error', (e) ->
         log colors.red e
         process.exit 1
