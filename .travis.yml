@@ -11,3 +11,16 @@ after_success:
     - npm run-script coveralls
 env:
     - DEBUG="generators:*"
+deploy:
+  provider: npm
+  email: jan@janraasch.com
+  api_key:
+    secure: Ku1acxKrbgHB38G69nWu7hwZDiM5cF+/Vup8B7xf1zStYPd1MLPkMiELDvRwZotafUBBJySuoAET3yZHOgCIfBnJr8C7wRHkDJuURd/hrtnq8KEQ4or/jClxwbkXyFtrN2Diop1KYqKR5HN05PC8aOkxyNya2IkozETtoh5AlOI=
+  skip_cleanup: true
+  on:
+    tags: true
+    repo: janraasch/generator-gulpplugin-coffee
+    node: '0.10'
+    # work-around for https://github.com/travis-ci/travis-ci/issues/1675
+    # branch: master
+    all_branches: true
