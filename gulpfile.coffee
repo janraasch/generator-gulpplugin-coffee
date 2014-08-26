@@ -48,7 +48,7 @@ gulp.task 'changelog', ->
         repository: 'https://github.com/janraasch/generator-gulpplugin-coffee'
         version: require('./package.json').version
     }, (err, log) ->
-        fs.writeFileSync 'CHANGELOG.md', log
+        fs.writeFileSync 'changelog.md', log
     )
 
 # workflow
