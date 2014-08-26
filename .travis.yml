@@ -1,21 +1,22 @@
 language: node_js
 node_js:
-    - '0.10'
-    - '0.11'
+- '0.10'
+- '0.11'
 before_install:
-    - currentfolder=${PWD##*/}
-    - if [ "$currentfolder" != 'generator-gulpplugin-coffee' ]; then cd .. && eval "mv $currentfolder generator-gulpplugin-coffee" && cd generator-gulpplugin-coffee; fi
+- currentfolder=${PWD##*/}
+- if [ "$currentfolder" != 'generator-gulpplugin-coffee' ]; then cd .. && eval "mv
+  $currentfolder generator-gulpplugin-coffee" && cd generator-gulpplugin-coffee; fi
 before_script:
-    - npm config set coverage true
+- npm config set coverage true
 after_success:
-    - npm run-script coveralls
+- npm run-script coveralls
 env:
-    - DEBUG="generators:*"
+- DEBUG="generators:*"
 deploy:
   provider: npm
   email: jan@janraasch.com
   api_key:
-    secure: Ku1acxKrbgHB38G69nWu7hwZDiM5cF+/Vup8B7xf1zStYPd1MLPkMiELDvRwZotafUBBJySuoAET3yZHOgCIfBnJr8C7wRHkDJuURd/hrtnq8KEQ4or/jClxwbkXyFtrN2Diop1KYqKR5HN05PC8aOkxyNya2IkozETtoh5AlOI=
+    secure: LyPMzJHHNRsDF3IfhXvnjP/HCGNgBKjuZRBoIH9SkFOvpz7xxry7Vls5hKvVUYcCNKhLpvTyJa81Jb2RfmAsoAI6pHSB3I5gCZ880t0tMmM1r3RP0gkrWKXRspeeP02YGeINTP/+OCot7EOLPXA4RS8/vVr0bvu4VDmqx2cdvkA=
   skip_cleanup: true
   on:
     tags: true
