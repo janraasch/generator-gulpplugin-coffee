@@ -30,7 +30,7 @@
     "github": "^0.2.1",
     "gulp-util": "^3.0.0",
     "mit": "^0.1.2",
-    "yeoman-generator": "^0.16.0"
+    "yeoman-generator": "^0.17.3"
   },
   "devDependencies": {
     "coffee-script": "^1.7.1",
