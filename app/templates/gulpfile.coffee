@@ -1,6 +1,6 @@
+del = require 'del'
 gulp = require 'gulp'
 coffee = require 'gulp-coffee'
-clean = require 'gulp-clean'
 {spawn} = require 'child_process'
 
 # compile `index.coffee`
@@ -10,9 +10,8 @@ gulp.task 'coffee', ->
         .pipe(gulp.dest './')
 
 # remove `index.js` and `coverage` dir
-gulp.task 'clean', ->
-    gulp.src(['index.js', 'coverage'], read: false)
-        .pipe(clean())
+gulp.task 'clean', (cb) ->
+    del ['index.js', 'coverage'], cb
 
 # run tests
 gulp.task 'test', ['coffee'], ->
