@@ -27,16 +27,16 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 [gulp-documentation]: https://github.com/gulpjs/gulp/blob/master/docs/README.md
 
 [npm-url]: https://npmjs.org/package/generator-gulpplugin-coffee
-[npm-image]: https://badge.fury.io/js/generator-gulpplugin-coffee.png
+[npm-image]: http://img.shields.io/npm/v/generator-gulpplugin-coffee.svg
 
 [travis-url]: http://travis-ci.org/janraasch/generator-gulpplugin-coffee
-[travis-image]: https://secure.travis-ci.org/janraasch/generator-gulpplugin-coffee.png?branch=master
+[travis-image]: https://secure.travis-ci.org/janraasch/generator-gulpplugin-coffee.svg?branch=master
 
 [coveralls-url]: https://coveralls.io/r/janraasch/generator-gulpplugin-coffee
-[coveralls-image]: https://coveralls.io/repos/janraasch/generator-gulpplugin-coffee/badge.png
+[coveralls-image]: https://img.shields.io/coveralls/janraasch/generator-gulpplugin-coffee.svg
 
 [depstat-url]: https://david-dm.org/janraasch/generator-gulpplugin-coffee
-[depstat-image]: https://david-dm.org/janraasch/generator-gulpplugin-coffee.png
+[depstat-image]: https://david-dm.org/janraasch/generator-gulpplugin-coffee.svg
 
 [devdepstat-url]: https://david-dm.org/janraasch/generator-gulpplugin-coffee#info=devDependencies
-[devdepstat-image]: https://david-dm.org/janraasch/generator-gulpplugin-coffee/dev-status.png
+[devdepstat-image]: https://david-dm.org/janraasch/generator-gulpplugin-coffee/dev-status.svg

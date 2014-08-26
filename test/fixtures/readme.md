@@ -39,16 +39,16 @@ The message you wish to attach to file.
 [MIT License](http://en.wikipedia.org/wiki/MIT_License) © [Really Paul](reallreally.me)
 
 [npm-url]: https://npmjs.org/package/gulp-awesome
-[npm-image]: https://badge.fury.io/js/gulp-awesome.png
+[npm-image]: https://img.shields.io/npm/v/gulp-awesome.svg
 
 [travis-url]: http://travis-ci.org/paully/gulp-awesome
-[travis-image]: https://secure.travis-ci.org/paully/gulp-awesome.png?branch=master
+[travis-image]: https://secure.travis-ci.org/paully/gulp-awesome.svg?branch=master
 
 [coveralls-url]: https://coveralls.io/r/paully/gulp-awesome
-[coveralls-image]: https://coveralls.io/repos/paully/gulp-awesome/badge.png
+[coveralls-image]: https://img.shields.io/coveralls/paully/gulp-awesome.svg
 
 [depstat-url]: https://david-dm.org/paully/gulp-awesome
-[depstat-image]: https://david-dm.org/paully/gulp-awesome.png
+[depstat-image]: https://david-dm.org/paully/gulp-awesome.svg
 
 [devdepstat-url]: https://david-dm.org/paully/gulp-awesome#info=devDependencies
-[devdepstat-image]: https://david-dm.org/paully/gulp-awesome/dev-status.png
+[devdepstat-image]: https://david-dm.org/paully/gulp-awesome/dev-status.svg

@@ -39,16 +39,16 @@ The message you wish to attach to file.
 [MIT License](http://en.wikipedia.org/wiki/MIT_License) © [<%= config.get('realname') %>](<%= config.get('homepage') %>)
 
 [npm-url]: https://npmjs.org/package/<%= config.get('appname') %>
-[npm-image]: https://badge.fury.io/js/<%= config.get('appname') %>.png
+[npm-image]: https://img.shields.io/npm/v/<%= config.get('appname') %>.svg
 
 [travis-url]: http://travis-ci.org/<%= config.get('githubUser') %>/<%= config.get('appname') %>
-[travis-image]: https://secure.travis-ci.org/<%= config.get('githubUser') %>/<%= config.get('appname') %>.png?branch=master
+[travis-image]: https://secure.travis-ci.org/<%= config.get('githubUser') %>/<%= config.get('appname') %>.svg?branch=master
 
 [coveralls-url]: https://coveralls.io/r/<%= config.get('githubUser') %>/<%= config.get('appname') %>
-[coveralls-image]: https://coveralls.io/repos/<%= config.get('githubUser') %>/<%= config.get('appname') %>/badge.png
+[coveralls-image]: https://img.shields.io/coveralls/<%= config.get('githubUser') %>/<%= config.get('appname') %>.svg
 
 [depstat-url]: https://david-dm.org/<%= config.get('githubUser') %>/<%= config.get('appname') %>
-[depstat-image]: https://david-dm.org/<%= config.get('githubUser') %>/<%= config.get('appname') %>.png
+[depstat-image]: https://david-dm.org/<%= config.get('githubUser') %>/<%= config.get('appname') %>.svg
 
 [devdepstat-url]: https://david-dm.org/<%= config.get('githubUser') %>/<%= config.get('appname') %>#info=devDependencies
-[devdepstat-image]: https://david-dm.org/<%= config.get('githubUser') %>/<%= config.get('appname') %>/dev-status.png
+[devdepstat-image]: https://david-dm.org/<%= config.get('githubUser') %>/<%= config.get('appname') %>/dev-status.svg
