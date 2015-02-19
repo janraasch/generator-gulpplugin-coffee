@@ -30,19 +30,17 @@
     "github": "^0.2.1",
     "gulp-util": "^3.0.0",
     "mit": "^0.1.2",
-    "yeoman-generator": "^0.17.3"
+    "yeoman-generator": "^0.17.0"
   },
   "devDependencies": {
-    "coffee-script": "^1.7.1",
     "coffeelint": "^1.0.2",
     "conventional-changelog": "0.0.11",
     "coveralls": "^2.8.0",
+    "del": "^1.1.1",
     "event-stream": "^3.1.0",
     "gulp": "^3.5.0",
-    "gulp-clean": "^0.3.1",
     "gulp-coffee": "^2.1.2",
     "gulp-coffeelint": "^0.4.0",
-    "gulp-util": "^3.0.0",
     "istanbul": "^0.3.0",
     "mocha": "^2.1.0",
     "should": "^5.0.0",

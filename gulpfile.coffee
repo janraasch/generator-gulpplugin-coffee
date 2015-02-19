@@ -2,7 +2,7 @@
 fs = require 'fs'
 gulp = require 'gulp'
 {log,colors,env} = require 'gulp-util'
-clean = require 'gulp-clean'
+del = require 'del'
 coffee = require 'gulp-coffee'
 coffeelint = require 'gulp-coffeelint'
 {concat, map} = require 'event-stream'
@@ -33,9 +33,8 @@ gulp.task 'coffee', ->
 
 # remove `app/index.js`, `coverage`
 # and `test/temp` dirs
-gulp.task 'clean', ->
-    gulp.src ['app/index.js', 'coverage', 'test/temp'], read: false
-        .pipe clean()
+gulp.task 'clean', (cb) ->
+    del ['app/index.js', 'coverage', 'test/temp'], cb
 
 # run tests
 gulp.task 'test', ['coffee'], ->
