@@ -41,11 +41,11 @@
     "gulp": "^3.5.0",
     "gulp-clean": "^0.3.1",
     "gulp-coffee": "^2.1.2",
-    "gulp-coffeelint": "^0.3.4",
+    "gulp-coffeelint": "^0.4.0",
     "gulp-util": "^3.0.0",
     "istanbul": "^0.3.0",
-    "mocha": "^1.17.0",
-    "should": "^4.0.4",
+    "mocha": "^2.1.0",
+    "should": "^5.0.0",
     "through2": "^0.6.1"
   },
   "peerDependencies": {
