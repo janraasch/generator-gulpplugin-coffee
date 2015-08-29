@@ -36,21 +36,11 @@ gulp.task 'coffee', ->
 # remove `app/index.js`, `coverage`
 # and `test/temp` dirs
 gulp.task 'clean', (cb) ->
-    del ['app/index.js', 'coverage', 'test/temp'], cb
+    del ['app/index.js', 'coverage'], cb
 
 # run tests
 gulp.task 'test', ['coffee'], ->
     spawn 'npm', ['test'], stdio: 'inherit'
-
-# create changelog
-gulp.task 'changelog', ->
-    changelog = require 'conventional-changelog'
-    changelog({
-        repository: 'https://github.com/janraasch/generator-gulpplugin-coffee'
-        version: require('./package.json').version
-    }, (err, log) ->
-        fs.writeFileSync 'changelog.md', log
-    )
 
 # workflow
 gulp.task 'default', ['coffee'], ->

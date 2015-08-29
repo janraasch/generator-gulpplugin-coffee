@@ -24,7 +24,8 @@
     "prepublish": "gulp coffee --failOnLintError --require coffee-script/register",
     "test": "istanbul test _mocha --report lcovonly -- test/*.coffee --require coffee-script/register --reporter spec --timeout 100000",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "david": "david"
+    "david": "david",
+    "changelog": "conventional-changelog -p angular -i changelog.md -w"
   },
   "dependencies": {
     "coffee-script": "^1.6.3",
@@ -38,18 +39,17 @@
   "devDependencies": {
     "coffeelint": "^1.0.2",
     "coffeelint-use-strict": "0.0.1",
-    "conventional-changelog": "0.0.11",
+    "conventional-changelog": "^0.4.2",
     "coveralls": "^2.8.0",
     "david": "^6.2.0",
     "del": "^1.1.1",
     "event-stream": "^3.1.0",
     "gulp": "^3.5.0",
     "gulp-coffee": "^2.1.2",
-    "gulp-coffeelint": "^0.4.0",
+    "gulp-coffeelint": "^0.5.0",
     "istanbul": "^0.3.0",
     "mocha": "^2.1.0",
-    "should": "^5.0.0",
-    "through2": "^0.6.1"
+    "should": "^7.1.0"
   },
   "engines": {
     "node": ">=0.10.0",
