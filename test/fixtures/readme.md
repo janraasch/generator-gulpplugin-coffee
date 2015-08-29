@@ -25,7 +25,7 @@ gulp.task('default', function () {
 });
 ```
 
-## Options `awesome(opt)`
+## API `awesome(opt)`
 
 ## opt.msg
 Type: `String`

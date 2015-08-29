@@ -25,7 +25,7 @@ gulp.task('default', function () {
 });
 ```
 
-## Options `<%= config.get('pluginName') %>(opt)`
+## API `<%= config.get('pluginName') %>(opt)`
 
 ## opt.msg
 Type: `String`
