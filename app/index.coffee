@@ -125,4 +125,4 @@ module.exports = class GulppluginCoffeeGenerator extends yeoman.generators.Base
         copyTpl 'test/main.coffee', {slugify, camelize, config: @config}
 
     install: ->
-        @installDependencies skipInstall: @options['skip-install']
+        @installDependencies skipInstall: @options['skip-install'], bower: false

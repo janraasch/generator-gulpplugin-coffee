@@ -113,14 +113,10 @@ describe 'generator gulpplugin-coffee', ->
             .run path.join __dirname, '../app'
             .inTmpDir (dir) ->
                 run_dir = dir
+            .withOptions skipInstall: false
             .withArguments ['--skip-github']
             .withPrompts githubUser: 'fully', pluginName: 'awesome'
-            .on 'end', ->
-                exec 'npm i', (err, stdout, stderr) ->
-                    if err
-                        done err
-                    else
-                        done()
+            .on 'end', done
 
         it 'produces a working npm test env with output as follows', (done) ->
             exec 'npm test', (err, stdout, stderr) ->
