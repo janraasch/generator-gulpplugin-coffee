@@ -23,7 +23,8 @@
   "scripts": {
     "prepublish": "gulp coffee --failOnLintError --require coffee-script/register",
     "test": "istanbul test _mocha --report lcovonly -- test/*.coffee --require coffee-script/register --reporter spec --timeout 100000",
-    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "david": "david"
   },
   "dependencies": {
     "coffee-script": "^1.6.3",
@@ -39,6 +40,7 @@
     "coffeelint-use-strict": "0.0.1",
     "conventional-changelog": "0.0.11",
     "coveralls": "^2.8.0",
+    "david": "^6.2.0",
     "del": "^1.1.1",
     "event-stream": "^3.1.0",
     "gulp": "^3.5.0",
