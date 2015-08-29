@@ -11,10 +11,10 @@ ERRS =
     STREAM:
         'stream content is not supported'
 # SUT
-<%= _.camelize(config.get("pluginName")) %> = require '../'
+<%= camelize(config.get("pluginName")) %> = require '../'
 
-describe '<%= _.slugify(config.get("appname")) %>', ->
-    describe '<%= _.camelize(config.get("pluginName")) %>()', ->
+describe '<%= slugify(config.get("appname")) %>', ->
+    describe '<%= camelize(config.get("pluginName")) %>()', ->
         it 'should pass through empty files', (done) ->
             dataCounter = 0
 
@@ -24,7 +24,7 @@ describe '<%= _.slugify(config.get("appname")) %>', ->
                 base: './test/fixture/',
                 contents: null
 
-            stream = <%= _.camelize(config.get("pluginName")) %>()
+            stream = <%= camelize(config.get("pluginName")) %>()
 
             stream.on 'data', (newFile) ->
                 should.exist(newFile)
@@ -51,7 +51,7 @@ describe '<%= _.slugify(config.get("appname")) %>', ->
                 base: './test/fixture/',
                 contents: new Buffer 'sure()'
 
-            stream = <%= _.camelize(config.get("pluginName")) %>()
+            stream = <%= camelize(config.get("pluginName")) %>()
 
             stream.on 'data', (newFile) ->
                 should.exist(newFile)
@@ -87,7 +87,7 @@ describe '<%= _.slugify(config.get("appname")) %>', ->
                 contents: new Buffer 'yeahmetoo()'
 
 
-            stream = <%= _.camelize(config.get("pluginName")) %>()
+            stream = <%= camelize(config.get("pluginName")) %>()
 
             stream.on 'data', (newFile) ->
                 ++dataCounter
@@ -109,7 +109,7 @@ describe '<%= _.slugify(config.get("appname")) %>', ->
                 base: './test/fixture/',
                 contents: new Buffer 'yeah();'
 
-            stream = <%= _.camelize(config.get("pluginName")) %>({
+            stream = <%= camelize(config.get("pluginName")) %>({
                 msg: 'Another something'
             })
 
@@ -130,7 +130,7 @@ describe '<%= _.slugify(config.get("appname")) %>', ->
             describe 'are thrown', ->
                 it 'if configuration is just wrong', (done) ->
                     try
-                        stream = <%= _.camelize(config.get("pluginName")) %>({
+                        stream = <%= camelize(config.get("pluginName")) %>({
                             msg: ->
                         })
                     catch e
@@ -146,7 +146,7 @@ describe '<%= _.slugify(config.get("appname")) %>', ->
                         base: './test/fixture/',
                         contents: process.stdin
 
-                    stream = <%= _.camelize(config.get("pluginName")) %>()
+                    stream = <%= camelize(config.get("pluginName")) %>()
 
                     stream.on 'error', (e) ->
                         should(e.plugin).equal PLUGIN_NAME

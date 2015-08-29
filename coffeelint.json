@@ -2,9 +2,24 @@
     "indentation": {
         "value": 4
     },
+    "use_strict": {
+        "requireGlobal": true,
+        "module": "coffeelint-use-strict"
+    },
+    "max_line_length": {
+        "level": "ignore"
+    },
+    "prefer_english_operator": {
+        "level": "error"
+    },
     "line_endings": {
+        "level": "error"
+    },
+    "no_trailing_whitespace": {
+        "name": "no_trailing_whitespace",
         "level": "error",
-        "value": "unix"
+        "allowed_in_comments": false,
+        "allowed_in_empty_lines": false
     },
     "colon_assignment_spacing": {
         "name": "colon_assignment_spacing",
@@ -14,17 +29,10 @@
             "right": 1
         }
     },
-    "space_operators": {
-        "level": "error"
-    },
-    "newlines_after_classes": {
-        "value": 3,
-        "level": "error"
-    },
-    "no_stand_alone_at": {
-        "level": "error"
-    },
     "arrow_spacing": {
+        "level": "error"
+    },
+    "space_operators": {
         "level": "error"
     },
     "cyclomatic_complexity": {
@@ -37,6 +45,16 @@
         "level": "error"
     },
     "no_unnecessary_fat_arrows": {
+        "level": "error"
+    },
+    "no_unnecessary_double_quotes": {
+        "level": "error"
+    },
+    "no_debugger": {
+        "name": "no_debugger",
+        "level": "error"
+    },
+    "no_interpolation_in_single_quotes": {
         "level": "error"
     }
 }

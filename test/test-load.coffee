@@ -1,3 +1,4 @@
+'use strict'
 assert = require 'assert'
 
 describe 'gulpplugin-coffee generator', ->

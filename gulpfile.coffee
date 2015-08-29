@@ -1,3 +1,5 @@
+'use strict'
+
 {spawn} = require 'child_process'
 fs = require 'fs'
 gulp = require 'gulp'

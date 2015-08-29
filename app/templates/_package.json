@@ -1,11 +1,11 @@
 {
-  "name": "<%= _.slugify(config.get('appname')) %>",
+  "name": "<%= slugify(config.get('appname')) %>",
   "version": "0.0.0",
   "description": "A plugin for gulp",
   "keywords": [
     "gulpplugin"
   ],
-  "repository": "<%= config.get('githubUser') %>/<%= _.slugify(config.get('appname')) %>",
+  "repository": "<%= config.get('githubUser') %>/<%= slugify(config.get('appname')) %>",
   "author": {
     "name": "<%= config.get('realname') %>",
     "email": "<%= config.get('email') %>",

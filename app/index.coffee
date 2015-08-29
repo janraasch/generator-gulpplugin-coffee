@@ -4,9 +4,13 @@
 path = require 'path'
 url = require 'url'
 yeoman = require 'yeoman-generator'
+yosay = require 'yosay'
 mit = require 'mit'
 gutil = require 'gulp-util'
 GitHubApi = require 'github'
+slugify = require 'underscore.string/slugify'
+camelize = require 'underscore.string/camelize'
+capitalize = require 'underscore.string/capitalize'
 
 # globals
 parsedUrl = null
@@ -16,8 +20,8 @@ env = process.env
 proxy = env.http_proxy or env.HTTP_PROXY or
     env.https_proxy or env.HTTPS_PROXY or null
 
-extractPluginName = (_, appname) ->
-    slugged = _.slugify appname
+extractPluginName = (appname) ->
+    slugged = slugify appname
     match = slugged.match /^gulp-(.+)/
     if match and match.length is 2
         match[1].toLowerCase()
@@ -42,92 +46,83 @@ if proxy
 else
     github = new GitHubApi version: gitHubApiVersion
 
-class GulppluginCoffeeGenerator extends yeoman.generators.Base
-    constructor: (args, options, config) ->
-        yeoman.generators.Base.apply this, arguments
+module.exports = class GulppluginCoffeeGenerator extends yeoman.generators.Base
+    configuring: ->
         @option 'skip-github',
             desc: 'Do not query github api
  for author details, i.e. name, email and blog'
-        @on 'end', ->
-            @installDependencies skipInstall: options['skip-install']
 
-        @pkg = JSON.parse(
-            @readFileAsString path.join __dirname, '../package.json'
-        )
-
-        # Setup config defaults.
+    initializing: ->
+        @pkg = @fs.readJSON path.join __dirname, '../package.json'
         @config.defaults
             githubUser: @user.git.username
-            pluginName: extractPluginName @_, @appname
+            pluginName: extractPluginName @appname
 
-    askFor: ->
-        done = @async()
+    prompting:
+        askFor: ->
+            done = @async()
 
-        # welcome message
-        if not @options['skip-welcome-message']
-            console.log @yeoman
-            gutil.log "Let's get streamin'!"
+            # welcome message
+            if not @options['skip-welcome-message']
+                @log yosay()
+                gutil.log "Let's get streamin'!"
 
 
-        prompts = [
-            name: 'githubUser'
-            message: 'Would you mind telling me your username on Github?'
-            default: @config.get 'githubUser'
-        ,
-            name: 'pluginName'
-            message: 'What\'s the base name
- (without the \'gulp-\') of your gulp plugin?'
-            default: @config.get 'pluginName'
-        ]
+            prompts = [
+                name: 'githubUser'
+                message: 'Would you mind telling me your username on Github?'
+                default: @config.get 'githubUser'
+            ,
+                name: 'pluginName'
+                message: 'What\'s the base name
+     (without the \'gulp-\') of your gulp plugin?'
+                default: @config.get 'pluginName'
+            ]
 
-        @prompt prompts, (props) =>
-            # Write answers to `config`.
-            @config.set 'githubUser', props.githubUser
-            @config.set 'pluginName', props.pluginName
-            @config.set 'appname', "gulp-#{@config.get 'pluginName'}"
-            done()
-
-    userInfo: ->
-        done = @async()
-
-        if @options['skip-github']
-            done()
-        else
-            githubUserInfo @config.get('githubUser'), (res) =>
-                @config.set 'realname', res.name
-                @config.set 'email', res.email
-                @config.set 'homepage', res.blog
+            @prompt prompts, (props) =>
+                # Write answers to `config`.
+                @config.set 'githubUser', props.githubUser
+                @config.set 'pluginName', props.pluginName
+                @config.set 'appname', "gulp-#{@config.get 'pluginName'}"
                 done()
 
-    git: ->
-        @copy 'gitignore', '.gitignore'
-        @copy 'gitattributes', '.gitattributes'
+        userInfo: ->
+            done = @async()
 
-    npmignore: ->
-        @copy 'npmignore', '.npmignore'
+            if @options['skip-github']
+                done()
+            else
+                githubUserInfo @config.get('githubUser'), (res) =>
+                    @config.set 'realname', res.name
+                    @config.set 'email', res.email
+                    @config.set 'homepage', res.blog
+                    done()
 
-    packageJSON: ->
-        @template '_package.json', 'package.json'
+    writing: ->
+        copy = (file, dest) =>
+            @fs.copy @templatePath(file), @destinationPath(dest)
+        copyTpl = (file, context) =>
+            @fs.copyTpl(
+                @templatePath(file),
+                @destinationPath(file.replace('_', '')),
+                context
+            )
 
-    gulpfile: ->
-        @template 'gulpfile.coffee', 'gulpfile.coffee'
+        copy('coffeelint.json', 'coffeelint.json')
+        copy('gitignore', '.gitignore')
+        copy('gitattributes', '.gitattributes')
+        copy('npmignore', '.npmignore')
+        copy('editorconfig', '.editorconfig')
+        copy('travis.yml', '.travis.yml')
 
-    coffeelint: ->
-        @copy 'coffeelint.json', 'coffeelint.json'
-
-    editorConfig: ->
-        @copy 'editorconfig', '.editorconfig'
-
-    travisYML: ->
-        @copy 'travis.yml', '.travis.yml'
-
-    license: ->
         LICENSE = mit @config.get 'realname'
-        @writeFileFromString LICENSE, 'LICENSE'
+        @fs.write @destinationPath('LICENSE'), LICENSE
 
-    plugin: ->
-        @template 'readme.md', 'readme.md'
-        @template 'index.coffee', 'index.coffee'
-        @template 'test/main.coffee', 'test/main.coffee'
+        copyTpl '_package.json', {slugify, config: @config}
+        copyTpl 'gulpfile.coffee', {slugify, camelize, @pkg, config: @config}
+        copyTpl 'readme.md', {camelize, capitalize, config: @config}
+        copyTpl 'index.coffee', {slugify: slugify, config: @config}
+        copyTpl 'test/main.coffee', {slugify, camelize, config: @config}
 
-module.exports = GulppluginCoffeeGenerator
+    install: ->
+        @installDependencies skipInstall: @options['skip-install']

@@ -1,125 +1,128 @@
+'use strict'
+
 path = require 'path'
 fs = require 'fs'
 yeoman = require 'yeoman-generator'
 should = require 'should'
 {exec} = require 'child_process'
 
-tempDir = path.join __dirname, 'temp'
 assert = yeoman.assert
 helpers = yeoman.test
 
 describe 'generator gulpplugin-coffee', ->
     # SUT
-    app = null
+    run_context = {}
+    run_dir = ''
 
-    beforeEach (done) ->
-        helpers.testDirectory tempDir, (err) ->
-            done err if err
+    context 'with defaults', ->
+        beforeEach (done) ->
+            run_context = helpers
+            .run path.join __dirname, '../app'
+            .inTmpDir (dir) ->
+                run_dir = dir
+            .withArguments ['--skip-github', '--skip-welcome-message']
+            .on 'end', done
 
-            app = helpers.createGenerator('gulpplugin-coffee:app', [
-                '../../app'
-            ])
-            app.options['skip-install'] = true
-            app.options['skip-github'] = true
-
-            done()
-
-    it 'generates dotfiles', (done) ->
-        expected = [
-            '.travis.yml'
-            '.editorconfig'
-            '.gitattributes'
-            '.npmignore'
-            '.gitignore'
-            '.yo-rc.json'
-        ]
-        helpers.mockPrompt app, {}
-        app.run {}, ->
+        it 'generates dotfiles', ->
+            expected = [
+                '.travis.yml'
+                '.editorconfig'
+                '.gitattributes'
+                '.npmignore'
+                '.gitignore'
+                '.yo-rc.json'
+            ]
             assert.file expected
-            done()
 
-    it 'creates expected boilerplate', (done) ->
-        expected = [
-            'coffeelint.json'
-            'package.json'
-            'LICENSE'
-            'readme.md'
-            'gulpfile.coffee'
-            'index.coffee'
-            'test/main.coffee'
-        ]
-        helpers.mockPrompt app, {}
-        app.run {}, ->
+        it 'creates expected boilerplate', ->
+            expected = [
+                'coffeelint.json'
+                'package.json'
+                'LICENSE'
+                'readme.md'
+                'gulpfile.coffee'
+                'index.coffee'
+                'test/main.coffee'
+            ]
             assert.file expected
-            done()
 
-    it 'tries to guess the pluginName', ->
-        (app.config.get 'pluginName').should.equal 'temp'
-
-    it 'updates .yo-rc.json according to input', (done) ->
-        helpers.mockPrompt app,
-            githubUser: 'githubUser'
-            pluginName: 'awesome'
-
-        app.run {}, ->
-            # wait for `.yo-rc.json` to be written
-            setTimeout ->
-                expected = JSON.parse(
-                    fs.readFileSync('../fixtures/yo-rc.json').toString()
-                )
-                expected.should.eql JSON.parse(
-                    fs.readFileSync('.yo-rc.json').toString()
-                )
-                done()
-            , 100
-
-    it 'scaffolds package.json according to input', (done) ->
-        helpers.mockPrompt app,
-            githubUser: 'paully'
-            pluginName: 'awesome'
-
-        app.config.set 'realname', 'Really Paul'
-        app.config.set 'email', 'really@mail.me'
-        app.config.set 'homepage', 'reallreally.me'
-
-        app.run {}, ->
-            expected = JSON.parse(
-                fs.readFileSync('../fixtures/_package.json').toString()
+        it 'tries to guess the pluginName', ->
+            _arr = run_dir.split(path.sep)
+            run_dirname = _arr[_arr.length - 1]
+            (run_context.generator.config.get 'pluginName').should.equal(
+                run_dirname
             )
-            expected.should.eql JSON.parse(
+
+        it 'produces an empty .npmignore', ->
+            ''.should.equal fs.readFileSync('.npmignore').toString()
+
+    context 'given githubUser and pluginName', ->
+        beforeEach (done) ->
+            run_context = helpers
+            .run path.join __dirname, '../app'
+            .inTmpDir (dir) ->
+                run_dir = dir
+            .withArguments ['--skip-github', '--skip-welcome-message']
+            .withPrompts githubUser: 'githubUser', pluginName: 'awesome'
+            .on 'end', done
+
+        it 'updates .yo-rc.json according to input', ->
+            JSON.parse(
+                fs
+                .readFileSync path.join __dirname, 'fixtures/yo-rc.json'
+                .toString()
+            ).should.eql JSON.parse(
+                fs.readFileSync('.yo-rc.json').toString()
+            )
+
+    context 'with githubUser, pluginName
+ and realname, email and homepage from the github api', ->
+        beforeEach (done) ->
+            run_context = helpers
+            .run path.join __dirname, '../app'
+            .inTmpDir (dir) ->
+                run_dir = dir
+            .withArguments ['--skip-github', '--skip-welcome-message']
+            .withPrompts githubUser: 'githubUser', pluginName: 'awesome'
+            .on 'ready', (generator) ->
+                generator.config.set realname: 'Really Paul'
+                generator.config.set email: 'really@mail.me'
+                generator.config.set homepage: 'reallreally.me'
+            .on 'end', done
+
+        it 'scaffolds package.json according to input', ->
+            JSON.parse(
+                fs
+                .readFileSync path.join __dirname, 'fixtures/_package.json'
+                .toString()
+            ).should.eql JSON.parse(
                 fs.readFileSync('package.json').toString()
             )
-            done()
 
-    it 'produces a sweet readme.md', (done) ->
-        helpers.mockPrompt app,
-            githubUser: 'paully'
-            pluginName: 'awesome'
-
-        app.config.set 'realname', 'Really Paul'
-        app.config.set 'email', 'really@mail.me'
-        app.config.set 'homepage', 'reallreally.me'
-
-        app.run {}, ->
-            expected = fs.readFileSync('../fixtures/readme.md').toString()
+        it 'produces a sweet readme.md', ->
             assert.textEqual(
-                fs.readFileSync('readme.md').toString(), expected
+                fs
+                .readFileSync path.join __dirname, 'fixtures/readme.md'
+                .toString(),
+                fs.readFileSync('readme.md').toString()
             )
-            done()
 
-    it 'produces an empty .npmignore', (done) ->
-        helpers.mockPrompt app, {}
-        app.run {}, ->
-            expected = ''
-            expected.should.equal fs.readFileSync('.npmignore').toString()
-            done()
+    context 'integration test (this may take a while)', ->
+        beforeEach (done) ->
+            run_context = helpers
+            .run path.join __dirname, '../app'
+            .inTmpDir (dir) ->
+                run_dir = dir
+            .withArguments ['--skip-github']
+            .withPrompts githubUser: 'fully', pluginName: 'awesome'
+            .on 'end', ->
+                exec 'npm i', (err, stdout, stderr) ->
+                    if err
+                        done err
+                    else
+                        done()
 
-    it 'produces a working npm test env', (done) ->
-        helpers.mockPrompt app,
-            githubUser: 'fully'
-            pluginName: 'awesome'
-
-        app.run {}, ->
+        it 'produces a working npm test env with output as follows', (done) ->
             exec 'npm test', (err, stdout, stderr) ->
                 if err
                     console.log stdout
@@ -128,8 +131,3 @@ describe 'generator gulpplugin-coffee', ->
                 else
                     console.log stdout
                     done()
-
-
-
-
-

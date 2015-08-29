@@ -2,7 +2,7 @@
 [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependency Status][depstat-image]][depstat-url] [![devDependency Status][devdepstat-image]][devdepstat-url]
 
 
-> <%= _.capitalize(config.get('pluginName')) %> plugin for [gulp](http://gulpjs.com/) 3.
+> <%= capitalize(config.get('pluginName')) %> plugin for [gulp](http://gulpjs.com/) 3.
 
 ## Usage
 

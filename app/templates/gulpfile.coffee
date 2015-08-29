@@ -18,10 +18,10 @@ gulp.task 'test', ['coffee'], ->
     spawn 'npm', ['test'], stdio: 'inherit'
 
 # run `<%= config.get('appname') %>` for testing purposes
-gulp.task '<%= _.slugify(config.get("appname")) %>', ->
-    <%= _.camelize(config.get("pluginName")) %> = require './index.coffee'
+gulp.task '<%= slugify(config.get("appname")) %>', ->
+    <%= camelize(config.get("pluginName")) %> = require './index.coffee'
     gulp.src('./{,test/,test/fixtures/}*.coffee')
-        .pipe(<%= _.camelize(config.get("pluginName")) %>())
+        .pipe(<%= camelize(config.get("pluginName")) %>())
 
 # start workflow
 gulp.task 'default', ['coffee'], ->
