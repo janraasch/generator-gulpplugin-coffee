@@ -1,21 +1,21 @@
 sudo: false
 language: node_js
 node_js:
-  - '0.10'
-  - '0.12'
-  - 'iojs'
+- '0.10'
+- '0.12'
+- iojs
 before_script: npm config set coverage true
 after_success: npm run-script coveralls
 env:
-  - DEBUG="yeoman:generator"
+- DEBUG="yeoman:generator"
 deploy:
   provider: npm
   email: jan@janraasch.com
-  api_key:
-    secure: LyPMzJHHNRsDF3IfhXvnjP/HCGNgBKjuZRBoIH9SkFOvpz7xxry7Vls5hKvVUYcCNKhLpvTyJa81Jb2RfmAsoAI6pHSB3I5gCZ880t0tMmM1r3RP0gkrWKXRspeeP02YGeINTP/+OCot7EOLPXA4RS8/vVr0bvu4VDmqx2cdvkA=
   skip_cleanup: true
+  api_key:
+    secure: YyzwJhcrqhq1sQwuDJGreilRcVED0GnUbmJu766CECknUCDYdJWtJE/M18hiPLTT/T9UQwMdMgd+R4AEJomCGFM1Qx18TKaavsTtrFdvAkC84A3V9LbinMm19nzuSE5G3j6m1bOmyT7JTaBfgWpLGCaWXKNXgzj6yMqoUehECcY=
   on:
     tags: true
     repo: janraasch/generator-gulpplugin-coffee
-    node: '0.10'
+    node: '0.12'
     branch: master
