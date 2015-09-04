@@ -1,3 +1,13 @@
+<a name="0.1.4"></a>
+## [0.1.4](https://github.com/janraasch/generator-gulpplugin-coffee/compare/v0.1.3...v0.1.4) (2015-09-04)
+
+
+### Features
+
+* **generated-devDependencies:** update del to v2 ([9174d52](https://github.com/janraasch/generator-gulpplugin-coffee/commit/9174d52))
+
+
+
 <a name="0.1.3"></a>
 ## [0.1.3](https://github.com/janraasch/generator-gulpplugin-coffee/compare/v0.1.2...v0.1.3) (2015-08-29)
 
