@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "coffeelint": "^1.0.2",
-    "coffeelint-use-strict": "0.0.1",
+    "coffeelint-use-strict": "^1.0.0",
     "conventional-changelog": "^0.4.2",
     "coveralls": "^2.8.0",
     "david": "^6.2.0",
