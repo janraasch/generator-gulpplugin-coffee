@@ -1,3 +1,14 @@
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/janraasch/generator-gulpplugin-coffee/compare/v0.1.4...v0.2.0) (2015-10-19)
+
+
+### Features
+
+* **generated-devDependencies:** update through2 to v2 ([927eee3](https://github.com/janraasch/generator-gulpplugin-coffee/commit/927eee3))
+* **travis-template:** run tests on v4 instead of iojs ([6590ef0](https://github.com/janraasch/generator-gulpplugin-coffee/commit/6590ef0))
+
+
+
 <a name="0.1.4"></a>
 ## [0.1.4](https://github.com/janraasch/generator-gulpplugin-coffee/compare/v0.1.3...v0.1.4) (2015-09-04)
 
