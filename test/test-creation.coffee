@@ -2,12 +2,10 @@
 
 path = require 'path'
 fs = require 'fs'
-yeoman = require 'yeoman-generator'
 should = require 'should'
 {exec} = require 'child_process'
-
-assert = yeoman.assert
-helpers = yeoman.test
+assert = require 'yeoman-assert'
+helpers = require 'yeoman-test'
 
 describe 'generator gulpplugin-coffee', ->
     # SUT

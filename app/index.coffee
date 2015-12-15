@@ -46,7 +46,7 @@ if proxy
 else
     github = new GitHubApi version: gitHubApiVersion
 
-module.exports = class GulppluginCoffeeGenerator extends yeoman.generators.Base
+module.exports = class GulppluginCoffeeGenerator extends yeoman.Base
     configuring: ->
         @option 'skip-github',
             desc: 'Do not query github api
