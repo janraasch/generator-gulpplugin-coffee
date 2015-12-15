@@ -1,3 +1,13 @@
+<a name="0.2.1"></a>
+## [0.2.1](https://github.com/janraasch/generator-gulpplugin-coffee/compare/v0.2.0...v0.2.1) (2015-12-15)
+
+
+### Maintenance
+
+* **dependencies:** update yeoman-generator to version 0.22.0 ([458ac5770](https://github.com/janraasch/generator-gulpplugin-coffee/commit/458ac57701ab9ef6d7c8d4813e522953f6dfd99c))
+
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/janraasch/generator-gulpplugin-coffee/compare/v0.1.4...v0.2.0) (2015-10-19)
 
