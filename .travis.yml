@@ -4,6 +4,7 @@ node_js:
 - '0.10'
 - '0.12'
 - '4'
+- '5'
 before_script: npm config set coverage true
 after_success: npm run-script coveralls
 env:
@@ -17,5 +18,5 @@ deploy:
   on:
     tags: true
     repo: janraasch/generator-gulpplugin-coffee
-    node: '0.12'
+    node: '4'
     branch: master
