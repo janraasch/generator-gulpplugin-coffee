@@ -32,7 +32,7 @@
     "github": "^0.2.1",
     "gulp-util": "^3.0.0",
     "mit": "^0.1.2",
-    "underscore.string": "^3.2.0",
+    "underscore.string": "^3.2.3",
     "yeoman-generator": "^0.22.0",
     "yosay": "^1.0.5"
   },
