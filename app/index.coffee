@@ -79,7 +79,7 @@ module.exports = class GulppluginCoffeeGenerator extends yeoman.Base
                 default: @config.get 'pluginName'
             ]
 
-            @prompt prompts, (props) =>
+            @prompt(prompts).then (props) =>
                 # Write answers to `config`.
                 @config.set 'githubUser', props.githubUser
                 @config.set 'pluginName', props.pluginName
