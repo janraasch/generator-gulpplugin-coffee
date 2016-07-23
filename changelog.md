@@ -1,3 +1,14 @@
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/janraasch/generator-gulpplugin-coffee/compare/v0.2.2...v1.0.0) (2016-07-23)
+
+
+### Features
+
+* **generated-dependencies:** update istanbul and should([21e5ea9](https://github.com/janraasch/generator-gulpplugin-coffee/commit/21e5ea9))
+* **generated-travis-yml:** run tests on node v5 and v6([f5b5eb7](https://github.com/janraasch/generator-gulpplugin-coffee/commit/f5b5eb7))
+
+
+
 <a name="0.2.2"></a>
 ## [0.2.2](https://github.com/janraasch/generator-gulpplugin-coffee/compare/v0.2.1...v0.2.2) (2016-05-04)
 
