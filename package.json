@@ -48,7 +48,7 @@
     "gulp-coffee": "^2.1.2",
     "gulp-coffeelint": "^0.6.0",
     "istanbul": "^0.4.0",
-    "mocha": "^2.1.0",
+    "mocha": "^3.0.0",
     "should": "^10.0.0",
     "yeoman-assert": "^2.1.1",
     "yeoman-test": "^1.4.0"
