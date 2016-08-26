@@ -41,7 +41,7 @@
     "coffeelint-use-strict": "^1.0.0",
     "conventional-changelog-cli": "^1.0.0",
     "coveralls": "^2.8.0",
-    "david": "^8.0.0",
+    "david": "^9.0.0",
     "del": "^2.0.1",
     "event-stream": "^3.1.0",
     "gulp": "^3.5.0",
