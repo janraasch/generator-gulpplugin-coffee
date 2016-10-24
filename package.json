@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "coffee-script": "^1.6.3",
-    "github": "^2.2.0",
+    "github": "^5.3.3",
     "gulp-util": "^3.0.0",
     "mit": "^0.1.2",
     "underscore.string": "^3.2.0",
