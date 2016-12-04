@@ -28,7 +28,7 @@
     "changelog": "conventional-changelog -p angular -i changelog.md -s"
   },
   "dependencies": {
-    "coffee-script": "^1.6.3",
+    "coffee-script": "^1.12.0",
     "github": "^2.2.0",
     "gulp-util": "^3.0.0",
     "mit": "^0.1.2",
