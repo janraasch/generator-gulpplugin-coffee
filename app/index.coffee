@@ -3,7 +3,7 @@
 # module deps
 path = require 'path'
 url = require 'url'
-yeoman = require 'yeoman-generator'
+Generator = require 'yeoman-generator'
 yosay = require 'yosay'
 mit = require 'mit'
 gutil = require 'gulp-util'
@@ -46,7 +46,7 @@ if proxy
 else
     github = new GitHubApi version: gitHubApiVersion
 
-module.exports = class GulppluginCoffeeGenerator extends yeoman.Base
+module.exports = class GulppluginCoffeeGenerator extends Generator
     configuring: ->
         @option 'skip-github',
             desc: 'Do not query github api
