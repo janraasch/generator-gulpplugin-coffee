@@ -54,7 +54,7 @@
     "yeoman-test": "^1.4.0"
   },
   "engines": {
-    "node": ">=0.10.0",
+    "node": ">= 4",
     "npm": ">=1.4.3"
   },
   "license": "MIT"
