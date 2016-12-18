@@ -29,8 +29,8 @@ extractPluginName = (appname) ->
         slugged
 
 githubUserInfo = (name, cb) ->
-    github.user.getFrom
-        user: name,
+    github.users.getForUser
+        username: name,
         (err, res) ->
             throw err if err
             cb JSON.parse JSON.stringify res
