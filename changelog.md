@@ -1,11 +1,26 @@
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/janraasch/generator-gulpplugin-coffee/compare/v1.0.0...v2.0.0) (2016-12-18)
+
+
+### Breaking
+
+* **node version:** Drop support for `node v0.10` and `node v0.12`. `v0.10` is already unmaintained. `v0.12` will be unmaintained by the end of this month ([ccd9d0d](https://github.com/janraasch/generator-gulpplugin-coffee/commit/ccd9d0dd619f4b29e95f2bda61bd1f27ccfb2b67))
+
+### Maintenance
+
+* **dependencies:** update yeoman-generator to v1 ([768c4d7](https://github.com/janraasch/generator-gulpplugin-coffee/commit/768c4d7d586ae560052340b58012e44a4a563cea))
+* **dependencies:** update github to v7 ([567420e](https://github.com/janraasch/generator-gulpplugin-coffee/commit/567420e485a367b94554eda38c0b6b5ba45439b1))
+
+
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/janraasch/generator-gulpplugin-coffee/compare/v0.2.2...v1.0.0) (2016-07-23)
 
 
 ### Features
 
-* **generated-dependencies:** update istanbul and should([21e5ea9](https://github.com/janraasch/generator-gulpplugin-coffee/commit/21e5ea9))
-* **generated-travis-yml:** run tests on node v5 and v6([f5b5eb7](https://github.com/janraasch/generator-gulpplugin-coffee/commit/f5b5eb7))
+* **generated-dependencies:** update istanbul and should ([21e5ea9](https://github.com/janraasch/generator-gulpplugin-coffee/commit/21e5ea9))
+* **generated-travis-yml:** run tests on node v5 and v6 ([f5b5eb7](https://github.com/janraasch/generator-gulpplugin-coffee/commit/f5b5eb7))
 
 
 
