@@ -13,13 +13,12 @@ describe 'generator gulpplugin-coffee', ->
     run_dir = ''
 
     context 'with defaults', ->
-        beforeEach (done) ->
+        beforeEach ->
             run_context = helpers
             .run path.join __dirname, '../app'
             .inTmpDir (dir) ->
                 run_dir = dir
             .withArguments ['--skip-github', '--skip-welcome-message']
-            .on 'end', done
 
         it 'generates dotfiles', ->
             expected = [
@@ -55,14 +54,13 @@ describe 'generator gulpplugin-coffee', ->
             ''.should.equal fs.readFileSync('.npmignore').toString()
 
     context 'given githubUser and pluginName', ->
-        beforeEach (done) ->
+        beforeEach ->
             run_context = helpers
             .run path.join __dirname, '../app'
             .inTmpDir (dir) ->
                 run_dir = dir
             .withArguments ['--skip-github', '--skip-welcome-message']
             .withPrompts githubUser: 'githubUser', pluginName: 'awesome'
-            .on 'end', done
 
         it 'updates .yo-rc.json according to input', ->
             JSON.parse(
@@ -75,7 +73,7 @@ describe 'generator gulpplugin-coffee', ->
 
     context 'with githubUser, pluginName
  and realname, email and homepage from the github api', ->
-        beforeEach (done) ->
+        beforeEach ->
             run_context = helpers
             .run path.join __dirname, '../app'
             .inTmpDir (dir) ->
@@ -86,7 +84,6 @@ describe 'generator gulpplugin-coffee', ->
                 generator.config.set realname: 'Really Paul'
                 generator.config.set email: 'really@mail.me'
                 generator.config.set homepage: 'reallreally.me'
-            .on 'end', done
 
         it 'scaffolds package.json according to input', ->
             JSON.parse(
@@ -106,7 +103,7 @@ describe 'generator gulpplugin-coffee', ->
             )
 
     context 'integration test (this may take a while)', ->
-        beforeEach (done) ->
+        beforeEach ->
             run_context = helpers
             .run path.join __dirname, '../app'
             .inTmpDir (dir) ->
@@ -114,7 +111,6 @@ describe 'generator gulpplugin-coffee', ->
             .withOptions skipInstall: false
             .withArguments ['--skip-github']
             .withPrompts githubUser: 'fully', pluginName: 'awesome'
-            .on 'end', done
 
         it 'produces a working npm test env with output as follows', (done) ->
             exec 'npm test', (err, stdout, stderr) ->
