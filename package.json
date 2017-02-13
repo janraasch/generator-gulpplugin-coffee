@@ -34,7 +34,7 @@
     "mit": "^0.1.2",
     "underscore.string": "^3.2.0",
     "yeoman-generator": "^1.0.0",
-    "yosay": "^1.0.5"
+    "yosay": "^2.0.0"
   },
   "devDependencies": {
     "coffeelint": "^1.0.2",
